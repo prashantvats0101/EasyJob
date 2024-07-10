@@ -26,14 +26,13 @@
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-	  <!-- Do not change NSAllowsArbitraryLoads to true, or you will risk app rejection! -->
 		<key>NSAllowsArbitraryLoads</key>
 		<false/>
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -48,5 +47,152 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>DMSans-Black.ttf</string>
+		<string>DMSans-BlackItalic.ttf</string>
+		<string>DMSans-Bold.ttf</string>
+		<string>DMSans-BoldItalic.ttf</string>
+		<string>DMSans-ExtraBold.ttf</string>
+		<string>DMSans-ExtraBoldItalic.ttf</string>
+		<string>DMSans-ExtraLight.ttf</string>
+		<string>DMSans-ExtraLightItalic.ttf</string>
+		<string>DMSans-Italic.ttf</string>
+		<string>DMSans-Light.ttf</string>
+		<string>DMSans-LightItalic.ttf</string>
+		<string>DMSans-Medium.ttf</string>
+		<string>DMSans-MediumItalic.ttf</string>
+		<string>DMSans-Regular.ttf</string>
+		<string>DMSans-SemiBold.ttf</string>
+		<string>DMSans-SemiBoldItalic.ttf</string>
+		<string>DMSans-Thin.ttf</string>
+		<string>DMSans-ThinItalic.ttf</string>
+		<string>DMSans_18pt-Black.ttf</string>
+		<string>DMSans_18pt-BlackItalic.ttf</string>
+		<string>DMSans_18pt-Bold.ttf</string>
+		<string>DMSans_18pt-BoldItalic.ttf</string>
+		<string>DMSans_18pt-ExtraBold.ttf</string>
+		<string>DMSans_18pt-ExtraBoldItalic.ttf</string>
+		<string>DMSans_18pt-ExtraLight.ttf</string>
+		<string>DMSans_18pt-ExtraLightItalic.ttf</string>
+		<string>DMSans_18pt-Italic.ttf</string>
+		<string>DMSans_18pt-Light.ttf</string>
+		<string>DMSans_18pt-LightItalic.ttf</string>
+		<string>DMSans_18pt-Medium.ttf</string>
+		<string>DMSans_18pt-MediumItalic.ttf</string>
+		<string>DMSans_18pt-Regular.ttf</string>
+		<string>DMSans_18pt-SemiBold.ttf</string>
+		<string>DMSans_18pt-SemiBoldItalic.ttf</string>
+		<string>DMSans_18pt-Thin.ttf</string>
+		<string>DMSans_18pt-ThinItalic.ttf</string>
+		<string>DMSans_24pt-Black.ttf</string>
+		<string>DMSans_24pt-BlackItalic.ttf</string>
+		<string>DMSans_24pt-Bold.ttf</string>
+		<string>DMSans_24pt-BoldItalic.ttf</string>
+		<string>DMSans_24pt-ExtraBold.ttf</string>
+		<string>DMSans_24pt-ExtraBoldItalic.ttf</string>
+		<string>DMSans_24pt-ExtraLight.ttf</string>
+		<string>DMSans_24pt-ExtraLightItalic.ttf</string>
+		<string>DMSans_24pt-Italic.ttf</string>
+		<string>DMSans_24pt-Light.ttf</string>
+		<string>DMSans_24pt-LightItalic.ttf</string>
+		<string>DMSans_24pt-Medium.ttf</string>
+		<string>DMSans_24pt-MediumItalic.ttf</string>
+		<string>DMSans_24pt-Regular.ttf</string>
+		<string>DMSans_24pt-SemiBold.ttf</string>
+		<string>DMSans_24pt-SemiBoldItalic.ttf</string>
+		<string>DMSans_24pt-Thin.ttf</string>
+		<string>DMSans_24pt-ThinItalic.ttf</string>
+		<string>DMSans_36pt-Black.ttf</string>
+		<string>DMSans_36pt-BlackItalic.ttf</string>
+		<string>DMSans_36pt-Bold.ttf</string>
+		<string>DMSans_36pt-BoldItalic.ttf</string>
+		<string>DMSans_36pt-ExtraBold.ttf</string>
+		<string>DMSans_36pt-ExtraBoldItalic.ttf</string>
+		<string>DMSans_36pt-ExtraLight.ttf</string>
+		<string>DMSans_36pt-ExtraLightItalic.ttf</string>
+		<string>DMSans_36pt-Italic.ttf</string>
+		<string>DMSans_36pt-Light.ttf</string>
+		<string>DMSans_36pt-LightItalic.ttf</string>
+		<string>DMSans_36pt-Medium.ttf</string>
+		<string>DMSans_36pt-MediumItalic.ttf</string>
+		<string>DMSans_36pt-Regular.ttf</string>
+		<string>DMSans_36pt-SemiBold.ttf</string>
+		<string>DMSans_36pt-SemiBoldItalic.ttf</string>
+		<string>DMSans_36pt-Thin.ttf</string>
+		<string>DMSans_36pt-ThinItalic.ttf</string>
+		<string>Montserrat-Black.ttf</string>
+		<string>Montserrat-BlackItalic.ttf</string>
+		<string>Montserrat-Bold.ttf</string>
+		<string>Montserrat-BoldItalic.ttf</string>
+		<string>Montserrat-ExtraBold.ttf</string>
+		<string>Montserrat-ExtraBoldItalic.ttf</string>
+		<string>Montserrat-ExtraLight.ttf</string>
+		<string>Montserrat-ExtraLightItalic.ttf</string>
+		<string>Montserrat-Italic.ttf</string>
+		<string>Montserrat-Light.ttf</string>
+		<string>Montserrat-LightItalic.ttf</string>
+		<string>Montserrat-Medium.ttf</string>
+		<string>Montserrat-MediumItalic.ttf</string>
+		<string>Montserrat-Regular.ttf</string>
+		<string>Montserrat-SemiBold.ttf</string>
+		<string>Montserrat-SemiBoldItalic.ttf</string>
+		<string>Montserrat-Thin.ttf</string>
+		<string>Montserrat-ThinItalic.ttf</string>
+		<string>OpenSans-Bold.ttf</string>
+		<string>OpenSans-BoldItalic.ttf</string>
+		<string>OpenSans-ExtraBold.ttf</string>
+		<string>OpenSans-ExtraBoldItalic.ttf</string>
+		<string>OpenSans-Italic.ttf</string>
+		<string>OpenSans-Light.ttf</string>
+		<string>OpenSans-LightItalic.ttf</string>
+		<string>OpenSans-Medium.ttf</string>
+		<string>OpenSans-MediumItalic.ttf</string>
+		<string>OpenSans-Regular.ttf</string>
+		<string>OpenSans-SemiBold.ttf</string>
+		<string>OpenSans-SemiBoldItalic.ttf</string>
+		<string>OpenSans_Condensed-Bold.ttf</string>
+		<string>OpenSans_Condensed-BoldItalic.ttf</string>
+		<string>OpenSans_Condensed-ExtraBold.ttf</string>
+		<string>OpenSans_Condensed-ExtraBoldItalic.ttf</string>
+		<string>OpenSans_Condensed-Italic.ttf</string>
+		<string>OpenSans_Condensed-Light.ttf</string>
+		<string>OpenSans_Condensed-LightItalic.ttf</string>
+		<string>OpenSans_Condensed-Medium.ttf</string>
+		<string>OpenSans_Condensed-MediumItalic.ttf</string>
+		<string>OpenSans_Condensed-Regular.ttf</string>
+		<string>OpenSans_Condensed-SemiBold.ttf</string>
+		<string>OpenSans_Condensed-SemiBoldItalic.ttf</string>
+		<string>OpenSans_SemiCondensed-Bold.ttf</string>
+		<string>OpenSans_SemiCondensed-BoldItalic.ttf</string>
+		<string>OpenSans_SemiCondensed-ExtraBold.ttf</string>
+		<string>OpenSans_SemiCondensed-ExtraBoldItalic.ttf</string>
+		<string>OpenSans_SemiCondensed-Italic.ttf</string>
+		<string>OpenSans_SemiCondensed-Light.ttf</string>
+		<string>OpenSans_SemiCondensed-LightItalic.ttf</string>
+		<string>OpenSans_SemiCondensed-Medium.ttf</string>
+		<string>OpenSans_SemiCondensed-MediumItalic.ttf</string>
+		<string>OpenSans_SemiCondensed-Regular.ttf</string>
+		<string>OpenSans_SemiCondensed-SemiBold.ttf</string>
+		<string>OpenSans_SemiCondensed-SemiBoldItalic.ttf</string>
+		<string>Poppins-Black.ttf</string>
+		<string>Poppins-BlackItalic.ttf</string>
+		<string>Poppins-Bold.ttf</string>
+		<string>Poppins-BoldItalic.ttf</string>
+		<string>Poppins-ExtraBold.ttf</string>
+		<string>Poppins-ExtraBoldItalic.ttf</string>
+		<string>Poppins-ExtraLight.ttf</string>
+		<string>Poppins-ExtraLightItalic.ttf</string>
+		<string>Poppins-Italic.ttf</string>
+		<string>Poppins-Light.ttf</string>
+		<string>Poppins-LightItalic.ttf</string>
+		<string>Poppins-Medium.ttf</string>
+		<string>Poppins-MediumItalic.ttf</string>
+		<string>Poppins-Regular.ttf</string>
+		<string>Poppins-SemiBold.ttf</string>
+		<string>Poppins-SemiBoldItalic.ttf</string>
+		<string>Poppins-Thin.ttf</string>
+		<string>Poppins-ThinItalic.ttf</string>
+	</array>
 </dict>
 </plist>
