@@ -10,10 +10,8 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 import messaging from '@react-native-firebase/messaging'
 
 
-
-
 const App = () => {
-  useEffect(()=>{
+useEffect(()=>{
     getdeviceToken()
     },[])
 
@@ -22,8 +20,7 @@ const getdeviceToken =async ()=>{
   console.log(token,"========Tokennn====>")
 }
 
-
-  return (
+return (
     <SafeAreaProvider>
       <RootSiblingParent>
         <Provider store={Store}>

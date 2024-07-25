@@ -63,8 +63,8 @@ const Category = () => {
     };
     useEffect(() => {
         const interval = setInterval(() => {
-            const nextIndex = (currentIndex + 1) % bannerimage.length;
-            flatListRef.current.scrollToIndex({ index: nextIndex });
+            const nextIndex = (currentIndex + 1) % bannerimage?.length;
+            flatListRef?.current?.scrollToIndex({ index: nextIndex });
             setCurrentIndex(nextIndex);
         }, 2000);
 

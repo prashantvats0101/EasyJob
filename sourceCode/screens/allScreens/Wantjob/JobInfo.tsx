@@ -161,7 +161,7 @@ const JobInfo = () => {
   const HeaderToken = useSelector<any>(
     state => state?.cookies?.loginUser?.data?.token,
   );
-  // console.log(HeaderToken, 'HeaderToken====>');
+  console.log(HeaderToken, 'HeaderToken====>');
   const handleNext = async () => {
     if (!selectedjobtype.name) {
     
@@ -276,6 +276,8 @@ const JobInfo = () => {
   }, []);
 
   const jobtypeoptions = async () => {
+    console.log("jobtypee",`${BASEURL}${apiName.GET_JOB_TYPE}`);
+    
     dispatch(setLoading(true));
     const n = `${BASEURL}${apiName.GET_JOB_TYPE}`;
     try {

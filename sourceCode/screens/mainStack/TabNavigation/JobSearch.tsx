@@ -64,7 +64,7 @@ const JobSearch = () => {
       text: 'Accounting & Consulting',
     },
   ];
-// console.log(jobData,"-========hello")
+console.log(jobData,"-========hello")
   //
   const HeaderToken = useSelector<any>(
     state => state?.cookies?.loginUser.data?.token,
@@ -72,7 +72,7 @@ const JobSearch = () => {
   // console.log(HeaderToken,"<=========")
   const fetchPopularCategory = async () => {
     //  dispatch(setLoading(true));
-    const n = `http://43.205.55.71:3000/api/job/get-popular-jobs`;
+    const n = `http://13.48.210.251:3000/api/job/get-popular-jobs`;
     try {
       const token = HeaderToken;
 
@@ -133,7 +133,7 @@ const JobSearch = () => {
           },
         },
       );
-      //  console.log(response?.data?.data[0],"<<<<<<<<<=======")
+    console.log(response?.data?.data[0],"<<<<<<<<<=======")
 
       setJobData(response?.data?.data);
     } catch (error) {
@@ -143,8 +143,8 @@ const JobSearch = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const nextIndex = (currentIndex + 1) % bannerimage.length;
-      flatListRef.current.scrollToIndex({index: nextIndex});
+      const nextIndex = (currentIndex + 1) % bannerimage?.length;
+      flatListRef?.current?.scrollToIndex({index: nextIndex});
       setCurrentIndex(nextIndex);
     }, 2000);
 
@@ -445,7 +445,7 @@ const JobSearch = () => {
         </View>
         <View style={[styles.flatlistmainview, {width: deviceWidth}]}>
           <FlatList
-            ref={flatListRef}
+            //ref={flatListRef}
             data={bannerimage}
             horizontal
             pagingEnabled
@@ -500,7 +500,7 @@ const JobSearch = () => {
             View All
           </CommonText>
         </TouchableOpacity>
-        {jobData.length > 0 ? (
+        {jobData?.length > 0 ? (
         <View
           style={{
             flexDirection: 'row',

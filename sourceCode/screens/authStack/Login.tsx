@@ -11,15 +11,15 @@ import {
   ScrollView,
   ActivityIndicator,
 } from 'react-native';
-import React, {useState, useEffect} from 'react';
-import {useNavigation} from '@react-navigation/native';
-import {CommonText, OpacityButton} from '../../components';
-import {Colors} from '../../constant';
+import React, { useState, useEffect } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { CommonText, OpacityButton } from '../../components';
+import { Colors } from '../../constant';
 import axios from 'axios';
-import apiName, {BASEURLLOGIN} from '../../Api/apiName';
+import apiName, { BASEURLLOGIN } from '../../Api/apiName';
 import Toast from 'react-native-toast-message';
-import {useSelector, useDispatch} from 'react-redux';
-import {setLoading, setLogindata, setUserId} from '../../Redux/reducer';
+import { useSelector, useDispatch } from 'react-redux';
+import { setLoading, setLogindata, setUserId } from '../../Redux/reducer';
 import Loaderr from '../allScreens/StartingScreens/Loaderr';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Strings from '../../utils/strings';
@@ -34,18 +34,17 @@ const Login = () => {
   const isLoading = useSelector<any>(state => state?.sliceReducer?.loading);
   // console.log(isLoading, '<========');
   const handleLoginPress = () => {
-  
+
     if (textInputValue.trim() === '') {
- 
-      Show_Toast('error','Please Enter Your Mobile Number')
+    Show_Toast('error', 'Please Enter Your Mobile Number')
     } else {
       const data = {
         mobileNumber: textInputValue,
         deviceId: '123456789',
         deviceToken: '789546asdasjhdghgasjdgbhgagyuqwtygere',
       };
-console.log(data,"data========>")
-dispatch(setLoading(true));
+      console.log(data, "data========>")
+      dispatch(setLoading(true));
       axios
         .post(`http://13.48.210.251:3000/api`, data)
         .then(response => {
@@ -60,7 +59,7 @@ dispatch(setLoading(true));
             mobileNumber: textInputValue,
             ottp,
           };
-        setTextInputValue('')
+          setTextInputValue('')
           // console.log(response.data.data,"<<=====login")
           // console.log(userId,"<<=====+++login")
           navigation.navigate('OTP', data);
@@ -69,26 +68,17 @@ dispatch(setLoading(true));
           dispatch(setLoading(false));
           console.error('Error occurred during login:', error);
           if (error.response && error.response.status === 400) {
-         
-            Show_Toast('error',Strings.alreadyreg)
-          } else {
-           
-            Show_Toast('error',Strings.ValidMobile)
-          }
+
+            Show_Toast('error', Strings.alreadyreg)
+          } 
         })
         .finally(() => {
           dispatch(setLoading(false));
         });
     }
   };
-
-
-
-
-  
-
-  return (
-    <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
+return (
+    <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
       <StatusBar backgroundColor={'#fff'} barStyle={'dark-content'} />
       <ImageBackground
         source={require('../../assets/Images/backgroundimg.png')}
@@ -99,7 +89,7 @@ dispatch(setLoading(true));
               source={require('../../assets/Images/Splashimg.png')}
               style={styles.imgstyl}
             />
-          
+
           </View>
           <View style={styles.LoginView}>
             <View style={styles.TxtView}>
@@ -112,7 +102,7 @@ dispatch(setLoading(true));
               <View style={styles.inputimgView}>
                 <Image
                   source={require('../../assets/Images/flagg.png')}
-                  style={{height: 20, width: 30, alignSelf: 'center'}}
+                  style={{ height: 20, width: 30, alignSelf: 'center' }}
                   resizeMode="contain"
                 />
               </View>
@@ -155,9 +145,9 @@ dispatch(setLoading(true));
 export default Login;
 
 const styles = StyleSheet.create({
-  backgroundimg: {height: '100%', width: '100%'},
-  imgView: {width: '100%', height: 328, alignItems: 'center'},
-  imgstyl: {width: '100%', height: 308, resizeMode: 'contain'},
+  backgroundimg: { height: '100%', width: '100%' },
+  imgView: { width: '100%', height: 328, alignItems: 'center' },
+  imgstyl: { width: '100%', height: 308, resizeMode: 'contain' },
   LoginView: {
     height: 495,
     // flex:1,
@@ -167,8 +157,8 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 40,
     // borderWidth:1
   },
-  TxtView: {marginTop: 40, marginLeft: 20},
-  txt: {color: Colors.whitetxt, fontSize: 24, fontFamily: 'Montserrat-Bold'},
+  TxtView: { marginTop: 40, marginLeft: 20 },
+  txt: { color: Colors.whitetxt, fontSize: 24, fontFamily: 'Montserrat-Bold' },
   txt1: {
     color: Colors.whitetxt,
     fontFamily: 'Montserrat-Medium',
@@ -206,8 +196,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginLeft: 3,
   },
-  textinputview: {width: '80%', alignSelf: 'center'},
-  Buttonstyl: {backgroundColor: Colors.whitetxt, marginTop: 80, width: '40%'},
+  textinputview: { width: '80%', alignSelf: 'center' },
+  Buttonstyl: { backgroundColor: Colors.whitetxt, marginTop: 80, width: '40%' },
   buttontxtstyl: {
     fontSize: 14,
     color: Colors.blacktxt,
