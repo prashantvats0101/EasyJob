@@ -8,6 +8,7 @@ import {PersistGate} from 'redux-persist/integration/react';
 import {RootSiblingParent} from 'react-native-root-siblings';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import messaging from '@react-native-firebase/messaging'
+import { LanguageProvider } from './sourceCode/language/LanguageContext';
 
 
 const App = () => {
@@ -25,9 +26,11 @@ return (
       <RootSiblingParent>
         <Provider store={Store}>
           <PersistGate loading={null} persistor={persistor}>
+          <LanguageProvider>
             <NavigationContainer>
               <StackNavigation />
             </NavigationContainer>
+            </LanguageProvider>
           </PersistGate>
         </Provider>
       </RootSiblingParent>

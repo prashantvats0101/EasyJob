@@ -3,6 +3,7 @@ import React from 'react'
 
 
 import SplashScreen from '../screens/onboarding/SplashScreen';
+import Language from '../screens/allScreens/StartingScreens/Language';
 import GetStarted from '../screens/allScreens/StartingScreens/GetStarted';
 import Login from '../screens/authStack/Login';
 
@@ -57,6 +58,7 @@ const StackNavigation = () => {
 
         >
             <Stack.Screen name='SpleshScreen' component={SplashScreen} />
+            <Stack.Screen name='Language' component={Language} />
             <Stack.Screen name='GetStarted' component={GetStarted} />
             <Stack.Screen name='Login' component={Login} />
             <Stack.Screen name='OTP' component={OTPScreen} />
