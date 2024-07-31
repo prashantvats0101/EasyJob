@@ -3,8 +3,9 @@ import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { CommonText } from '../../../components'
 import { Colors } from '../../../constant'
-
+import { useTranslation } from 'react-i18next'
 const YouWanted = () => {
+    const { t, i18n } = useTranslation();
     const navigation = useNavigation()
    
     return (
@@ -13,7 +14,7 @@ const YouWanted = () => {
             <View style={styles.wantjobView}>
                 <Image source={require('../../../assets/Images/wantjob.png')} style={styles.ImgStyl} />
                 <View style={styles.TxtView}>
-                    <CommonText style={styles.txt1}>I WANT A JOB</CommonText>
+                    <CommonText style={styles.txt1}>{t('I WANT A JOB')}</CommonText>
                     <TouchableOpacity onPress={() => { navigation.navigate('personalinfo') }}>
         
                         <Image source={require('../../../assets/Images/bluearrow.png')} style={styles.arrowstyl} />
@@ -23,7 +24,7 @@ const YouWanted = () => {
             <View style={styles.wantHireView}>
                 <Image source={require('../../../assets/Images/wantHire.png')} style={styles.ImgStyl2} />
                 <View style={styles.TxtView}>
-                    <CommonText style={styles.txt2}>I WANT TO HIRE</CommonText>
+                    <CommonText style={styles.txt2}>{t('I WANT TO HIRE')}</CommonText>
                     <TouchableOpacity onPress={()=>navigation.navigate("campanyinfo")}>
                         <Image source={require('../../../assets/Images/whitearrow.png')} />
                     </TouchableOpacity>
@@ -33,7 +34,7 @@ const YouWanted = () => {
     )
 }
 
-export default YouWanted
+export default YouWanted;
 
 const styles = StyleSheet.create({
     wantjobView: { height: '50%', width: '100%', justifyContent: 'center', alignItems: 'center' },

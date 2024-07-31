@@ -1,6 +1,27 @@
 {
-    "translation":{
-        "choose your preferred language":"अपनी पसंदीदा भाषा चुनें",
-        "please select your language":"कृपया अपनी भाषा चुनें"
+    "translation": {
+      "choose your\npreferred language":"अपनी पसंदीदा भाषा चुनें",
+      "please select your language":"कृपया अपनी भाषा चुनें",
+  
+      "Find your":"अपना खोजें",
+      "Dream Job":"सपनों की नौकरी",
+      "Here!":"यहाँ!",
+      "Explore all the most exciting job roles based on your interest and study major.":"अपनी रुचि और अध्ययन प्रमुख के आधार पर सभी सबसे रोमांचक नौकरी भूमिकाओं का अन्वेषण करें।",
+      "GET STARTED":"शुरू करें",
+  
+      "Login":"लॉगिन",
+      "Please sign in to continue.":"कृपया जारी रखने के लिए साइन इन करें।",
+      "Phone Number":"फोन नंबर",
+      "LOGIN":"लॉगिन",
+  
+      "Enter":"दर्ज करें",
+      "OTP":" ओटीपी",
+      "A verification codes has been sent to":"एक सत्यापन कोड भेजा गया है",
+      "Didn't receive the code?":"कोड प्राप्त नहीं हुआ?",
+      "Resend OTP":"ओटीपी पुनः भेजें",
+      "NEXT":"अगला",
+
+      "I WANT A JOB": "मुझे नौकरी चाहिए",
+      "I WANT TO HIRE": "मुझे भर्ती करनी है"
     }
-}
+  }

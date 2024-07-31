@@ -3,12 +3,14 @@ import { View, Text,StyleSheet, Image, ImageBackground} from 'react-native';
 import { useTranslation } from 'react-i18next';
 import '../../components/i18n';
 import LanguageButton from './Languagebutton'
+import { useNavigation } from '@react-navigation/native';
 
 
 
 const Start = () => {
   const { t, i18n } = useTranslation();
   const [selectedLanguage, setSelectedLanguage] = useState('en');
+  const navigation=useNavigation();
 
   const languages = [
     { name: 'हिन्दी', code: 'hi', flag: require('../../assets/Images/india.png') },
@@ -19,6 +21,8 @@ const Start = () => {
   const changeLanguage = (code) => {
     i18n.changeLanguage(code);
     setSelectedLanguage(code);
+    navigation.replace('GetStarted')
+    
   };
 
   return (

@@ -24,9 +24,10 @@ import Loaderr from '../allScreens/StartingScreens/Loaderr';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Strings from '../../utils/strings';
 import { Show_Toast } from '../../utils/helper';
-
+import { useTranslation } from 'react-i18next';
 
 const Login = () => {
+  const { t,i18n } = useTranslation();
   const [textInputValue, setTextInputValue] = useState('');
   const navigation = useNavigation<any>();
   const dispatch = useDispatch();
@@ -36,7 +37,7 @@ const Login = () => {
   const handleLoginPress = () => {
 
     if (textInputValue.trim() === '') {
-    Show_Toast('error', 'Please Enter Your Mobile Number')
+    Show_Toast('error', t('Please Enter Your Mobile Number'))
     } else {
       const data = {
         mobileNumber: textInputValue,
@@ -93,9 +94,9 @@ return (
           </View>
           <View style={styles.LoginView}>
             <View style={styles.TxtView}>
-              <CommonText style={styles.txt}>Login</CommonText>
+              <CommonText style={styles.txt}>{t('Login')}</CommonText>
               <CommonText style={styles.txt1}>
-                Please sign in to continue.
+                {t('Please sign in to continue.')}
               </CommonText>
             </View>
             <View style={styles.inputView}>
@@ -107,7 +108,7 @@ return (
                 />
               </View>
               <View style={styles.textinputview}>
-                <CommonText style={styles.inputtxt}>Phone Number</CommonText>
+                <CommonText style={styles.inputtxt}>{t('Phone Number')}</CommonText>
                 <TextInput
                   // placeholder="556363  55555"
                   style={styles.input}
@@ -130,7 +131,7 @@ return (
 
             <OpacityButton
               btnTextStyle={styles.buttontxtstyl}
-              name={'LOGIN'}
+              name={t('LOGIN')}
               button={styles.Buttonstyl}
               pressButton={handleLoginPress}
             />

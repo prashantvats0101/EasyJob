@@ -1,20 +1,24 @@
 import { Image, ImageBackground, SafeAreaView, StyleSheet, Text, View, StatusBar } from 'react-native'
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { useNavigation } from '@react-navigation/native'
 import Colors from '../../../constant/Colors'
 import { CommonText, OpacityButton } from '../../../components'
 
+
 const GetStarted = () => {
+    const { t,i18n } = useTranslation();
+
     const navigation = useNavigation()
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
             <StatusBar backgroundColor={'#fff'} />
             <ImageBackground source={require('../../../assets/Images/backgroundimg.png')} style={styles.backgroundimg}>
                 <View style={styles.txtview}>
-                    <CommonText style={styles.txtstyl}>Find Your </CommonText>
-                    <CommonText style={styles.txtstyl2}>Dream Job</CommonText>
-                    <CommonText style={styles.txtstyl}>Here!</CommonText>
-                    <CommonText style={styles.txtstyl3}>Explore all the most exciting job roles based on your interest and study major.</CommonText>
+                    <CommonText style={styles.txtstyl}>{t('Find your')} </CommonText>
+                    <CommonText style={styles.txtstyl2}>{t('Dream Job')}</CommonText>
+                    <CommonText style={styles.txtstyl}>{t('Here!')}</CommonText>
+                    <CommonText style={styles.txtstyl3}>{t('Explore all the most exciting job roles based on your interest and study major.')}</CommonText>
 
                 </View>
                 <View style={styles.imgView}>
@@ -23,7 +27,7 @@ const GetStarted = () => {
                 </View>
                 <OpacityButton
                     btnTextStyle={{ fontSize: 14, }}
-                    name={'GET STARTED'}
+                    name={t('GET STARTED')}
                     button={{ marginTop: 40, width: '70%', }}
                     pressButton={() => { navigation.replace('Login') }}
                 />
@@ -33,7 +37,7 @@ const GetStarted = () => {
     )
 }
 
-export default GetStarted
+export default GetStarted;
 
 const styles = StyleSheet.create({
     backgroundimg: { height: '100%', width: '100%' },
