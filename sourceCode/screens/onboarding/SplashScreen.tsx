@@ -31,7 +31,7 @@ const SplashScreen = () => {
                 }
                 
             } else {
-                navigation.replace("GetStarted");
+                navigation.replace("Language");
                 
             }
         }, 3000);
