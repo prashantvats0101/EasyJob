@@ -4,6 +4,7 @@ import React from 'react'
 
 import SplashScreen from '../screens/onboarding/SplashScreen';
 import GetStarted from '../screens/allScreens/StartingScreens/GetStarted';
+import Start from '../screens/authStack/Language';
 import Login from '../screens/authStack/Login';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -58,6 +59,7 @@ const StackNavigation = () => {
         >
             <Stack.Screen name='SpleshScreen' component={SplashScreen} />
             <Stack.Screen name='GetStarted' component={GetStarted} />
+            <Stack.Screen name='Start' component={Start} />
             <Stack.Screen name='Login' component={Login} />
             <Stack.Screen name='OTP' component={OTPScreen} />
             <Stack.Screen name='Youwant' component={YouWanted} />
