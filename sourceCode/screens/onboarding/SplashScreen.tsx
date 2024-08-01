@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { useEffect } from "react"
 import { Image, ImageBackground, SafeAreaView, StatusBar, Text } from "react-native"
 import { Colors } from "../../constant"
@@ -31,7 +32,7 @@ const SplashScreen = () => {
                 }
                 
             } else {
-                navigation.replace("GetStarted");
+                navigation.replace("Language");
                 
             }
         }, 3000);
