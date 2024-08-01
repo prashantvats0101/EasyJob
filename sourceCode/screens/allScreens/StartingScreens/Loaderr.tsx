@@ -1,8 +1,12 @@
+/* eslint-disable prettier/prettier */
 import {StyleSheet, Text, View, ActivityIndicator, Modal} from 'react-native';
 import React from 'react';
 import {Colors} from '../../../constant';
+import { useTranslation } from 'react-i18next';
+import '../../../components/i18n';
 
 const Loaderr = () => {
+  const { t } = useTranslation();
   return (
    
       <Modal transparent >
@@ -32,7 +36,7 @@ const Loaderr = () => {
             }}>
             <Text
               style={{fontSize: 17, fontWeight: 'bold', color: Colors.white}}>
-              Loading...
+              {t('Loading...')}
             </Text>
           </View>
         </View>

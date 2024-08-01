@@ -1,11 +1,13 @@
+/* eslint-disable prettier/prettier */
 import { View, Text } from 'react-native'
 import React from 'react'
 
 
 import SplashScreen from '../screens/onboarding/SplashScreen';
+import Language from '../screens/allScreens/StartingScreens/Language';
 import GetStarted from '../screens/allScreens/StartingScreens/GetStarted';
 import Login from '../screens/authStack/Login';
-
+import Selection from '../screens/allScreens/StartingScreens/Selection'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import OTPScreen from '../screens/allScreens/StartingScreens/OTPScreen';
 import YouWanted from '../screens/allScreens/StartingScreens/YouWanted';
@@ -57,10 +59,11 @@ const StackNavigation = () => {
 
         >
             <Stack.Screen name='SpleshScreen' component={SplashScreen} />
+            <Stack.Screen name='Language' component={Language}/>
             <Stack.Screen name='GetStarted' component={GetStarted} />
             <Stack.Screen name='Login' component={Login} />
             <Stack.Screen name='OTP' component={OTPScreen} />
-            <Stack.Screen name='Youwant' component={YouWanted} />
+            <Stack.Screen name='Selection' component={Selection} />
             <Stack.Screen name='personalinfo' component={PersonalInfo} />
             <Stack.Screen name='JobInfo' component={JobInfo} />
             <Stack.Screen name='TabNavigation' component={TabNavigator} />

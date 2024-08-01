@@ -1,0 +1,27 @@
+{
+    "translation": {
+      "Choose Your Preferred Language":"ਆਪਣੀ ਪਸੰਦੀਦਾ ਭਾਸ਼ਾ ਚੁਣੋ",
+      "please select your language":"ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੀ ਭਾਸ਼ਾ ਚੁਣੋ",
+
+      "starter":"starter",
+      "Find Your":"ਇੱਥੇ ਆਪਣੀ",
+       "Dream Job":"ਡ੍ਰੀਮ ਨੌਕਰੀ",
+        "Here!":"ਲੱਭੋ!",
+      "Explore all the most exciting job roles based on your interest and study major.":"ਤੁਹਾਡੀ ਦਿਲਚਸਪੀ ਅਤੇ ਅਧਿਐਨ ਪ੍ਰਮੁੱਖ ਦੇ ਆਧਾਰ 'ਤੇ ਸਭ ਤੋਂ ਦਿਲਚਸਪ ਨੌਕਰੀ ਦੀਆਂ ਭੂਮਿਕਾਵਾਂ ਦੀ ਪੜਚੋਲ ਕਰੋ।",
+      "GET STARTED":"ਸ਼ੁਰੂ ਕਰੋ",
+
+      "Number":"number",
+      "Please sign in to continue.":"ਜਾਰੀ ਰੱਖਣ ਲਈ ਕਿਰਪਾ ਕਰਕੇ ਸਾਈਨ ਇਨ ਕਰੋ।",
+      "Login":"ਲਾਗਿਨ",
+      "LOGIN":"ਲਾਗਿਨ",
+
+      "Enter":"ਦਾਖਲ ਕਰੋ",
+      "OTP":"OTP",
+      "A verification codes has been sent to (+91)":"ਤੁਹਾਨੂੰ ਇੱਕ ਪੁਸ਼ਟੀਕਰਨ ਕੋਡ ਭੇਜਿਆ ਗਿਆ ਹੈ (+91)",
+      "Didn't receive the code?":"ਕੋਡ ਪ੍ਰਾਪਤ ਨਹੀਂ ਹੋਇਆ?",
+      "Resend OTP":"OTP ਦੁਬਾਰਾ ਭੇਜੋ",
+
+      "I WANT A JOB":"ਮੈਨੂੰ ਨੌਕਰੀ ਚਾਹੀਦੀ ਹੈ",
+      "I WANT TO HIRE":"ਮੈਂ ਹਾਇਰ ਕਰਨਾ ਚਾਹੁੰਦਾ ਹਾਂ"
+    }
+}

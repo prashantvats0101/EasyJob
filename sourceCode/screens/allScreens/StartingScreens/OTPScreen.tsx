@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {
   StyleSheet,
   Text,
@@ -20,11 +21,13 @@ import {useDispatch} from 'react-redux';
 import {setLoginuser} from '../../../Redux/cookiesReducer';
 import Strings from '../../../utils/strings';
 import { Show_Toast } from '../../../utils/helper';
+import { useTranslation } from 'react-i18next';
+import '../../../components/i18n';
 
 const OTPScreen = ({route, navigation}: any) => {
   const {userId, mobileNumber, ottp} = route?.params;
   const [otpp, setOTPP] = useState(ottp);
-
+  const { t } = useTranslation();
 
 
   const dispatch = useDispatch();
@@ -47,7 +50,7 @@ const OTPScreen = ({route, navigation}: any) => {
           if (jobSeeker === undefined) {
             Show_Toast('success',Strings.Welcome,Strings.OTPVerified)
             setTimeout(()=>{
-              navigation.replace('Youwant');
+              navigation.replace('Selection');
             },2000)
           
           } else if (jobSeeker == 'jobSeeker') {
@@ -126,11 +129,11 @@ const OTPScreen = ({route, navigation}: any) => {
       
       <View style={styles.alltxt}>
         <View style={styles.otptxt}>
-          <CommonText style={styles.txt}>Enter</CommonText>
-          <CommonText style={styles.txt1}> OTP</CommonText>
+          <CommonText style={styles.txt}>{t("Enter")}</CommonText>
+          <CommonText style={styles.txt1}> {t("OTP")}</CommonText>
         </View>
         <CommonText style={styles.txt2}>
-          A verification codes has been sent to (+91) {mobileNumber}
+          {t("A verification codes has been sent to")}(+91) {mobileNumber}
         </CommonText>
       </View>
 
@@ -151,10 +154,10 @@ const OTPScreen = ({route, navigation}: any) => {
       />
       <View style={styles.txtView}>
         <CommonText style={styles.txtDidnt}>
-          Didn't receive the code?{' '}
+          {t("Didn't receive the code?")}{' '}
         </CommonText>
         <TouchableOpacity onPress={handleResendOTP}>
-          <CommonText style={styles.txtResend}>Resend OTP</CommonText>
+          <CommonText style={styles.txtResend}>{t("Resend OTP")}</CommonText>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
