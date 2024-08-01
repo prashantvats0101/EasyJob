@@ -18,6 +18,7 @@ const selected = [
 
 const Selection = () => {
     const navigation = useNavigation();
+    const { t } = useTranslation();
     const select = (name) => {
         switch (name) {
           case 'Internship':
@@ -43,7 +44,7 @@ const Selection = () => {
               <Image style={styles.image} source={item.img} resizeMode="contain"  />
             </View>
             <View style={styles.textcontainer}>
-              <Text style={styles.text}>{item.name}</Text>
+              <Text style={styles.text}>{t(item.name)}</Text>
             </View>
           </TouchableOpacity>
       ))}
