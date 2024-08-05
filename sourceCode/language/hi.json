@@ -22,7 +22,39 @@
       "NEXT":"अगला",
 
       "I WANT A JOB": "मुझे नौकरी चाहिए",
-      "I WANT TO HIRE": "मुझे भर्ती करनी है"
+      "I WANT TO HIRE": "मुझे भर्ती करनी है",
+
+      "Personal Information":"व्यक्तिगत जानकारी",
+      "Full Name":"पूरा नाम",
+      "Email":"ईमेल",
+      "Number":"नंबर",
+      "Alternative Number": "वैकल्पिक नंबर",
+      "Gender": "लिंग",
+      "Male": "पुरुष",
+      "Female": "महिला",
+      "DOB": "जन्म तिथि",
+      "Address": "पता",
+
+
+      "Discover Your Dream Job with": "अपने सपनों की नौकरी खोजें",
+      "Explore more than": "से अधिक का अन्वेषण करें",
+      "Great platform for the job seeker that searching for new": "नौकरी खोजने वालों के लिए शानदार मंच जो नए की तलाश कर रहे हैं",
+      "career heights and passionate about startups.": "करियर की ऊंचाइयों तक पहुंचने और स्टार्टअप्स के प्रति उत्साही।",
+      "Search...": "खोजें...",
+      "Search": "खोजें",
+      "Jobs": "नौकरियाँ",
+      "View All": "सभी देखें",
+      "Explore by": "अन्वेषण करें द्वारा",
+      "Popular Category": "लोकप्रिय श्रेणी",
+      "Bio": "जीवनी",
+      "Experience": "अनुभव",
+      "Education": "शिक्षा",
+      "Current Salary": "वर्तमान वेतन",
+      "Job Type": "नौकरी का प्रकार",
+      "Availability": "उपलब्धता",
+      "Need Help? Ask Us": "सहायता चाहिए? हमसे पूछें"
+
+
     }
   }
   

@@ -15,7 +15,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef, useState, useTransition} from 'react';
 import {Colors} from '../../../constant';
 import {useDispatch, useSelector} from 'react-redux';
 import {CommonText} from '../../../components';
@@ -25,6 +25,7 @@ import {useFocusEffect, useNavigation} from '@react-navigation/native';
 import {setProfiledata} from '../../../Redux/cookiesReducer';
 import {Show_Toast} from '../../../utils/helper';
 import {setLikedJobdata, setLoading} from '../../../Redux/reducer';
+import { useTranslation } from 'react-i18next';
 
 const JobSearch = () => {
   const [bannerimage, setbannerimage] = useState([]);
@@ -37,6 +38,7 @@ const JobSearch = () => {
   const dataFromRedux = useSelector<any>(state => state?.cookies?.profiledata);
   const navigation = useNavigation();
   const dispatch = useDispatch();
+  const {t}=useTranslation();
   const Popular_Category = [
     {
       id: 1,
@@ -391,18 +393,18 @@ console.log(jobData,"-========hello")
         showsHorizontalScrollIndicator={false}>
            <View style={{paddingHorizontal:10}}>
         <CommonText style={styles.Discover_your_txt}>
-          Discover Your Dream Job with
+          {t('Discover Your Dream Job with')}
           <CommonText style={styles.Easy_job}> Easy Job</CommonText>
         </CommonText>
         <CommonText style={styles.explore_more_txt}>
-          Explore more than
+          {t('Explore more than')}
         </CommonText>
         <CommonText style={styles.jobs_txt}>5000+ Jobs</CommonText>
         <CommonText style={styles.get_platform_txt}>
-          Great platform for the job seeker that searching for new
+          {t('Great platform for the job seeker that searching for new')}
         </CommonText>
         <CommonText style={styles.get_platform_txt}>
-          career heights and passionate about startups.
+          {t('career heights and passionate about startups.')}
         </CommonText>
         <View style={{paddingVertical: 5, backgroundColor: '#ffff'}}>
           <View style={styles.search_field_parent_view}>
@@ -413,7 +415,7 @@ console.log(jobData,"-========hello")
                 source={require('../../../assets/Images/search_blue.png')}
               />
               <TextInput
-                placeholder="Search..."
+                placeholder={t("Search...")}
                 placeholderTextColor={'#637763'}
                 style={styles.input}
                 onChangeText={text => setSearchText(text)}
@@ -426,7 +428,7 @@ console.log(jobData,"-========hello")
               <Image
                 source={require('../../../assets/Images/search_white.png')}
               />
-              <CommonText style={styles.search_txt}>Search</CommonText>
+              <CommonText style={styles.search_txt}>{t('Search')}</CommonText>
             </TouchableOpacity>
           </View>
         </View>
@@ -482,9 +484,9 @@ console.log(jobData,"-========hello")
         </View>
         <View style={{paddingHorizontal:10}}>
         <CommonText style={styles.explore_by_txt}>
-          Explore by{' '}
+          {t('Explore by')}{' '}
           <CommonText style={[styles.explore_by_txt, {color: Colors.Bluebg}]}>
-            Popular Category
+            {t('Popular Category')}
           </CommonText>
         </CommonText>
         <FlatList
@@ -497,7 +499,7 @@ console.log(jobData,"-========hello")
         onPress={()=>{navigation.navigate('PopularCategory')}}
         >
           <CommonText style={[styles.search_txt, {marginLeft: 0}]}>
-            View All
+            {t('View All')}
           </CommonText>
         </TouchableOpacity>
         {jobData?.length > 0 ? (

@@ -1,35 +1,33 @@
-
 import React, { useEffect } from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import StackNavigation from './sourceCode/navigation/StackNavigation';
-import {Provider} from 'react-redux';
-import Store, {persistor} from './sourceCode/Redux/store';
-import {PersistGate} from 'redux-persist/integration/react';
-import {RootSiblingParent} from 'react-native-root-siblings';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
-import messaging from '@react-native-firebase/messaging'
+import { Provider } from 'react-redux';
+import Store, { persistor } from './sourceCode/Redux/store';
+import { PersistGate } from 'redux-persist/integration/react';
+import { RootSiblingParent } from 'react-native-root-siblings';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import messaging from '@react-native-firebase/messaging';
 import { LanguageProvider } from './sourceCode/language/LanguageContext';
 
-
 const App = () => {
-useEffect(()=>{
-    getdeviceToken()
-    },[])
+  useEffect(() => {
+    getdeviceToken();
+  }, []);
 
-const getdeviceToken =async ()=>{
-  let token = await messaging().getToken()
-  console.log(token,"========Tokennn====>")
-}
+  const getdeviceToken = async () => {
+    let token = await messaging().getToken();
+    console.log(token, "========Tokennn====>");
+  };
 
-return (
+  return (
     <SafeAreaProvider>
       <RootSiblingParent>
         <Provider store={Store}>
           <PersistGate loading={null} persistor={persistor}>
-          <LanguageProvider>
-            <NavigationContainer>
-              <StackNavigation />
-            </NavigationContainer>
+            <LanguageProvider>
+              <NavigationContainer>
+                <StackNavigation />
+              </NavigationContainer>
             </LanguageProvider>
           </PersistGate>
         </Provider>

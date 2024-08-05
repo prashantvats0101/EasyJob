@@ -1,15 +1,15 @@
 import React, { useContext } from 'react';
 import { View, Text, StyleSheet, Image, ImageBackground } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import { useNavigation } from '@react-navigation/native';
 import '../../../language/i18n';
 import LanguageButton from '../../../components/LanguageButton';
-import { useNavigation } from '@react-navigation/native';
 import { LanguageContext } from '../../../language/LanguageContext';
 
 const Language = () => {
   const { t, i18n } = useTranslation();
   const navigation = useNavigation();
-  const { selectedLanguage, setSelectedLanguage } = useContext(LanguageContext);
+  const { selectedLanguage, changeLanguage } = useContext(LanguageContext);
 
   const languages = [
     { name: 'हिन्दी', code: 'hi', flag: require('../../../assets/Images/india.png') },
@@ -17,9 +17,9 @@ const Language = () => {
     { name: 'English', code: 'en', flag: require('../../../assets/Images/uk.png') },
   ];
 
-  const changeLanguage = (code) => {
+  const handleLanguageChange = (code) => {
     i18n.changeLanguage(code);
-    setSelectedLanguage(code);
+    changeLanguage(code);
     navigation.replace('GetStarted');
   };
 
@@ -35,7 +35,7 @@ const Language = () => {
               key={language.code}
               language={language}
               isSelected={selectedLanguage === language.code}
-              onPress={() => changeLanguage(language.code)}
+              onPress={() => handleLanguageChange(language.code)}
             />
           ))}
         </View>

@@ -6,16 +6,17 @@ import {
   SafeAreaView,
   StatusBar,
   Alert,
-  TouchableOpacity,BackHandler
+  TouchableOpacity,
+  BackHandler
 } from 'react-native';
-import React, {useRef, useState, useEffect, useLayoutEffect,useContext} from 'react';
-import {useFocusEffect, useNavigation} from '@react-navigation/native';
+import React, {useRef, useState, useEffect, useContext} from 'react';
+import {useNavigation} from '@react-navigation/native';
 import {CommonText, OpacityButton} from '../../../components';
 import {Colors} from '../../../constant';
 import axios from 'axios';
 import OTPTextView from 'react-native-otp-textinput';
 import Toast from 'react-native-toast-message';
-import apiName, {BASEURL, BASEURLLOGIN} from '../../../Api/apiName';
+import apiName, {BASEURL} from '../../../Api/apiName';
 import {useDispatch} from 'react-redux';
 import {setLoginuser} from '../../../Redux/cookiesReducer';
 import Strings from '../../../utils/strings';
@@ -28,15 +29,14 @@ const OTPScreen = ({route, navigation}: any) => {
   const [otpp, setOTPP] = useState(ottp);
   const { t } = useTranslation();
   const { selectedLanguage } = useContext(LanguageContext);
-
-
-
   const dispatch = useDispatch();
+
+  const [resendDisabled, setResendDisabled] = useState(false);
+  const [timer, setTimer] = useState(30);
 
   const handleVerifyOTP = () => {
     if (otpp.trim() === '') {
-   
-      Show_Toast('error',Strings.EnterOTP)
+      Show_Toast('error', Strings.EnterOTP);
     } else {
       const data = {
         otp: otpp,
@@ -45,54 +45,44 @@ const OTPScreen = ({route, navigation}: any) => {
       axios
         .post(`${BASEURL}${apiName.VERIFY_OTP}${userId}`, data)
         .then(response => {
-          // console.log('OTP Verified==:', response.data);
           const jobSeeker = response.data?.data?.findUserId?.userType;
-          console.log(jobSeeker, 'userType=====>');
           if (jobSeeker === undefined) {
-            Show_Toast('success',Strings.Welcome,Strings.OTPVerified)
-            setTimeout(()=>{
+            Show_Toast('success', Strings.Welcome, Strings.OTPVerified);
+            setTimeout(() => {
               navigation.replace('Youwant');
-            },2000)
-          
+            }, 2000);
           } else if (jobSeeker == 'jobSeeker') {
-          
-            Show_Toast('success',Strings.Welcome,Strings.OTPVerified)
-            setTimeout(()=>{
+            Show_Toast('success', Strings.Welcome, Strings.OTPVerified);
+            setTimeout(() => {
               navigation.navigate('TabNavigation');
-            },2000)
-           
+            }, 2000);
             dispatch(setLoginuser(response?.data));
-            
           } else if (jobSeeker == 'jobProvider') {
-            setTimeout(()=>{
-            navigation.replace('TabHireNavi');
-          },2000)
+            setTimeout(() => {
+              navigation.replace('TabHireNavi');
+            }, 2000);
             dispatch(setLoginuser(response?.data));
           }
-
-          Show_Toast('success',Strings.Welcome,Strings.OTPVerified)
+          Show_Toast('success', Strings.Welcome, Strings.OTPVerified);
         })
         .catch(error => {
           console.error('Error occurred during OTP verification:', error);
-          if (
-            error.response &&
-            error.response.data &&
-            error.response.data.message
-          ) {
+          if (error.response && error.response.data && error.response.data.message) {
             const errorMessage = error.response.data.message;
-       
-            Show_Toast('error',errorMessage)
+            Show_Toast('error', errorMessage);
             console.log(errorMessage, '<======');
           } else {
-            // Alert.alert('Error', 'Failed to verify OTP. Please try again.');
+            Show_Toast('error', 'Failed to verify OTP. Please try again.');
           }
         });
     }
   };
 
   const handleResendOTP = () => {
-   
-    Show_Toast('info',Strings.ResendOtp)
+    setResendDisabled(true);
+    setTimer(30);
+    Show_Toast('info', Strings.ResendOtp);
+
     const data = {
       mobileNumber: mobileNumber,
       deviceId: '123456789',
@@ -102,9 +92,7 @@ const OTPScreen = ({route, navigation}: any) => {
     axios
       .post(`http://43.205.55.71:3000/api`, data)
       .then(response => {
-        console.log('OTP Resent Successfully', response.data);
         const newOTTP = response?.data?.data?.otp;
-        console.log(newOTTP, '<newotp=====');
         dispatch(setLoginuser(response?.data));
         setOTPP(newOTTP);
       })
@@ -112,6 +100,24 @@ const OTPScreen = ({route, navigation}: any) => {
         console.error('Error occurred during OTP resend:', error);
       });
   };
+
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    if (resendDisabled) {
+      interval = setInterval(() => {
+        setTimer(prevTimer => {
+          if (prevTimer <= 1) {
+            clearInterval(interval);
+            setResendDisabled(false);
+            return 30;
+          }
+          return prevTimer - 1;
+        });
+      }, 1000);
+    }
+    return () => clearInterval(interval);
+  }, [resendDisabled]);
+
   let otpInput = useRef(null);
 
   const setText = () => {
@@ -123,18 +129,17 @@ const OTPScreen = ({route, navigation}: any) => {
   useEffect(() => {
     setText();
   }, [otpp]);
+
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
       <StatusBar backgroundColor={'#fff'} />
-    
-      
       <View style={styles.alltxt}>
         <View style={styles.otptxt}>
           <CommonText style={styles.txt}>{t('Enter')}</CommonText>
           <CommonText style={styles.txt1}>{t(' OTP')}</CommonText>
         </View>
         <CommonText style={styles.txt2}>
-          {t('A verification codes has been sent to')} (+91) {mobileNumber}
+          {t('A verification code has been sent to')} (+91) {mobileNumber}
         </CommonText>
       </View>
 
@@ -157,8 +162,10 @@ const OTPScreen = ({route, navigation}: any) => {
         <CommonText style={styles.txtDidnt}>
           {t(`Didn't receive the code?`)}{' '}
         </CommonText>
-        <TouchableOpacity onPress={handleResendOTP}>
-          <CommonText style={styles.txtResend}>{t('Resend OTP')}</CommonText>
+        <TouchableOpacity onPress={handleResendOTP} disabled={resendDisabled}>
+          <CommonText style={styles.txtResend}>
+            {resendDisabled ? `${t('Resend OTP')} (${timer})` : t('Resend OTP')}
+          </CommonText>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -177,7 +184,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    // borderWidth: 1,
     width: '90%',
     height: 55,
     marginTop: 20,
