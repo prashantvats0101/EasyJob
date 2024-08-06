@@ -1,24 +1,24 @@
 /* eslint-disable prettier/prettier */
 import { Image, ImageBackground, SafeAreaView, StyleSheet, Text, View, StatusBar } from 'react-native'
-import React from 'react'
+import React,{useContext} from 'react'
+import { useTranslation } from 'react-i18next';
 import { useNavigation } from '@react-navigation/native'
 import Colors from '../../../constant/Colors'
 import { CommonText, OpacityButton } from '../../../components'
-import { useTranslation } from 'react-i18next';
-import '../../../components/i18n';
-
+import { LanguageContext } from '../../../language/LanguageContext';
 const GetStarted = () => {
     const navigation = useNavigation()
     const { t } = useTranslation();
+    const { selectedLanguage } = useContext(LanguageContext);
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
             <StatusBar backgroundColor={'#fff'} />
             <ImageBackground source={require('../../../assets/Images/backgroundimg.png')} style={styles.backgroundimg}>
                 <View style={styles.txtview}>
-                    <CommonText style={styles.txtstyl}>{t("Find Your")} </CommonText>
-                    <CommonText style={styles.txtstyl2}>{t("Dream Job")}</CommonText>
-                    <CommonText style={styles.txtstyl}>{t("Here!")}</CommonText>
-                    <CommonText style={styles.txtstyl3}>{t("Explore all the most exciting job roles based on your interest and study major.")}</CommonText>
+                    <CommonText style={styles.txtstyl}>{t('Find Your ')}</CommonText>
+                    <CommonText style={styles.txtstyl2}>{t('Dream Job')}</CommonText>
+                    <CommonText style={styles.txtstyl}>{t('Here!')}</CommonText>
+                    <CommonText style={styles.txtstyl3}>{t('Explore all the most exciting job roles based on your interest and study major.')}</CommonText>
 
                 </View>
                 <View style={styles.imgView}>

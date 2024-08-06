@@ -59,7 +59,7 @@ const StackNavigation = () => {
 
         >
             <Stack.Screen name='SpleshScreen' component={SplashScreen} />
-            <Stack.Screen name='Language' component={Language}/>
+            <Stack.Screen name='Language' component={Language} />
             <Stack.Screen name='GetStarted' component={GetStarted} />
             <Stack.Screen name='Login' component={Login} />
             <Stack.Screen name='OTP' component={OTPScreen} />

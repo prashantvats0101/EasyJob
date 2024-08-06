@@ -30,6 +30,8 @@ import {setLoginuser} from '../../../Redux/cookiesReducer';
 import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 import Strings from '../../../utils/strings';
 import {Show_Toast} from '../../../utils/helper';
+import i18n from '../../../language/i18n';
+import { useTranslation } from 'react-i18next';
 
 const PersonalInfo = () => {
   const navigation = useNavigation();
@@ -48,6 +50,7 @@ const PersonalInfo = () => {
   const logindata = useSelector<any>(state => state?.sliceReducer?.userId);
   const userID = logindata;
   const isLoading = useSelector<any>(state => state?.sliceReducer?.loading);
+  const {t}=useTranslation();
 
   useEffect(() => {
     requestCameraPermission();
@@ -247,7 +250,7 @@ const PersonalInfo = () => {
       <StatusBar barStyle={'dark-content'} backgroundColor={Colors.whitetxt} />
       <HeaderComp
         img={require('../../../assets/Images/arrowback.png')}
-        txt="Personal Information "
+        txt={t('Personal Information')}
       />
 
       <ScrollView keyboardShouldPersistTaps="handled">
@@ -297,10 +300,10 @@ const PersonalInfo = () => {
           </TouchableOpacity> */}
         </View>
         {isLoading && <Loaderr />}
-        <InputText txt="Full Name" value={name} onChangeText={setName} />
-        <InputText txt="Email" value={email} onChangeText={setEmail} />
+        <InputText txt={t("Full Name")} value={name} onChangeText={setName} />
+        <InputText txt={t("Email")} value={email} onChangeText={setEmail} />
         <InputText
-          txt="Number"
+          txt={t("Number")}
           keyboardType="numeric"
           value={mobileNumber.length > 0 ? `+91 ${mobileNumber}` : ''}
           onChangeText={text => {
@@ -313,7 +316,7 @@ const PersonalInfo = () => {
           length={14}
         />
         <InputText
-          txt="Alternative Number"
+          txt={t("Alternative Number")}
           keyboardType="numeric"
           value={
             alternateMobileNumber.length > 0
@@ -331,7 +334,7 @@ const PersonalInfo = () => {
         />
 
         <View style={styles.GenderView}>
-          <CommonText style={styles.gendertxt}>Gender</CommonText>
+          <CommonText style={styles.gendertxt}>{t('Gender')}</CommonText>
           <View style={{justifyContent: 'center', height: 60}}>
             <View style={{flexDirection: 'row'}}>
               <TouchableOpacity
@@ -344,7 +347,7 @@ const PersonalInfo = () => {
                   />
                 )}
               </TouchableOpacity>
-              <CommonText style={styles.txts}>Male</CommonText>
+              <CommonText style={styles.txts}>{t('Male')}</CommonText>
               <TouchableOpacity
                 style={[styles.Selectg, {marginLeft: 90}]}
                 onPress={() => setSelectedGender('female')}>
@@ -355,7 +358,7 @@ const PersonalInfo = () => {
                   />
                 )}
               </TouchableOpacity>
-              <CommonText style={[styles.txts]}>Female</CommonText>
+              <CommonText style={[styles.txts]}>{t('Female')}</CommonText>
             </View>
           </View>
         </View>
@@ -363,7 +366,7 @@ const PersonalInfo = () => {
           onPress={() => setCalendarVisibility(true)}
           style={styles.inputView}
           activeOpacity={1}>
-          <CommonText style={styles.inputtxt}>DOB</CommonText>
+          <CommonText style={styles.inputtxt}>{t('DOB')}</CommonText>
           <View
             style={{
               flexDirection: 'row',
@@ -406,7 +409,7 @@ const PersonalInfo = () => {
           </Modal>
         </TouchableOpacity>
         <InputText
-          txt="Address"
+          txt={t("Address")}
           img={require('../../../assets/Images/Address.png')}
           imgstyle={styles.inputimg}
           inputstyl={styles.inputstyl}
@@ -417,7 +420,7 @@ const PersonalInfo = () => {
         />
 
         <OpacityButton
-          name="NEXT"
+          name={t("NEXT")}
           button={styles.ButtonStyl}
           //  pressButton={()=>{postData()}}
           pressButton={handleNext}

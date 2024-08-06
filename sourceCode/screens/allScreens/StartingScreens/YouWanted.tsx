@@ -6,11 +6,12 @@ import { CommonText } from '../../../components';
 import { Colors } from '../../../constant';
 import { useTranslation } from 'react-i18next';
 import '../../../components/i18n';
-
+import { LanguageContext } from '../../../language/LanguageContext'
 
 const YouWanted = () => {
     const navigation = useNavigation();
     const { t } = useTranslation();
+    const {selectedLanguage}=useContext(LanguageContext);
    
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
@@ -18,6 +19,7 @@ const YouWanted = () => {
             <View style={styles.wantjobView}>
                 <Image source={require('../../../assets/Images/wantjob.png')} style={styles.ImgStyl} />
                 <View style={styles.TxtView}>
+                    <CommonText style={styles.txt1}>{t('I WANT A JOB')}</CommonText>
                     <CommonText style={styles.txt1}>{t('I WANT A JOB')}</CommonText>
                     <TouchableOpacity onPress={() => { navigation.navigate('personalinfo') }}>
         

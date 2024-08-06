@@ -1,27 +1,60 @@
 {
     "translation": {
-      "Choose Your Preferred Language":"अपनी पसंदीदा  भाषा चुनें",
+      "choose your\npreferred language":"अपनी पसंदीदा भाषा चुनें",
       "please select your language":"कृपया अपनी भाषा चुनें",
-
-      
-      "Find Your":"अपनी",
-       "Dream Job":"सपनों की नौकरी",
-        "Here!":"यहाँ खोजें!",
-      "Explore all the most exciting job roles based on your interest and study major.":"अपनी रुचि और प्रमुख अध्ययन के आधार पर सभी सबसे रोमांचक नौकरी भूमिकाओं का अन्वेषण करें।",
-      "GET STARTED":"शुरू हो जाओ",
-
-      
-      "Please sign in to continue.":"कृपया जारी रखने के लिए साइन इन करें",
-      "Login":"लॉग इन करें",
-      "LOGIN":"लॉग इन करें",
-
-      "Enter":" दर्ज करें",
-      "OTP":"ओटीपी",
-      "A verification codes has been sent to (+91)":"एक सत्यापन कोड भेज दिया गया है (+91)",
+  
+      "Find Your ":"अपना खोजें",
+      "Dream Job":"सपनों की नौकरी",
+      "Here!":"यहाँ!",
+      "Explore all the most exciting job roles based on your interest and study major.":"अपनी रुचि और अध्ययन प्रमुख के आधार पर सभी सबसे रोमांचक नौकरी भूमिकाओं का अन्वेषण करें।",
+      "GET STARTED":"शुरू करें",
+  
+      "Login":"लॉगिन",
+      "Please sign in to continue.":"कृपया जारी रखने के लिए साइन इन करें।",
+      "Phone Number":"फोन नंबर",
+      "LOGIN":"लॉगिन",
+  
+      "Enter":"दर्ज करें",
+      " OTP":" ओटीपी",
+      "A verification codes has been sent to":"एक सत्यापन कोड भेजा गया है",
       "Didn't receive the code?":"कोड प्राप्त नहीं हुआ?",
       "Resend OTP":"ओटीपी पुनः भेजें",
+      "NEXT":"अगला",
 
-      "I WANT A JOB":"मुझे नौकरी चाहिए",
-      "I WANT TO HIRE":"मैं पारिश्रमिक चाहता हूं"
+      "I WANT A JOB": "मुझे नौकरी चाहिए",
+      "I WANT TO HIRE": "मुझे भर्ती करनी है",
+
+      "Personal Information":"व्यक्तिगत जानकारी",
+      "Full Name":"पूरा नाम",
+      "Email":"ईमेल",
+      "Number":"नंबर",
+      "Alternative Number": "वैकल्पिक नंबर",
+      "Gender": "लिंग",
+      "Male": "पुरुष",
+      "Female": "महिला",
+      "DOB": "जन्म तिथि",
+      "Address": "पता",
+
+
+      "Discover Your Dream Job with": "अपने सपनों की नौकरी खोजें",
+      "Explore more than": "से अधिक का अन्वेषण करें",
+      "Great platform for the job seeker that searching for new": "नौकरी खोजने वालों के लिए शानदार मंच जो नए की तलाश कर रहे हैं",
+      "career heights and passionate about startups.": "करियर की ऊंचाइयों तक पहुंचने और स्टार्टअप्स के प्रति उत्साही।",
+      "Search...": "खोजें...",
+      "Search": "खोजें",
+      "Jobs": "नौकरियाँ",
+      "View All": "सभी देखें",
+      "Explore by": "अन्वेषण करें द्वारा",
+      "Popular Category": "लोकप्रिय श्रेणी",
+      "Bio": "जीवनी",
+      "Experience": "अनुभव",
+      "Education": "शिक्षा",
+      "Current Salary": "वर्तमान वेतन",
+      "Job Type": "नौकरी का प्रकार",
+      "Availability": "उपलब्धता",
+      "Need Help? Ask Us": "सहायता चाहिए? हमसे पूछें"
+
+
     }
-}
+  }
+  

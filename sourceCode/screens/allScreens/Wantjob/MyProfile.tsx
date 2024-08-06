@@ -17,6 +17,7 @@ import {useNavigation} from '@react-navigation/native';
 import {useSelector} from 'react-redux';
 import ImageViewer from 'react-native-image-zoom-viewer';
 import {CommonText} from '../../../components';
+import { useTranslation } from 'react-i18next';
 
 const MyProfile = () => {
   const HeaderToken = useSelector<any>(
@@ -26,6 +27,7 @@ const MyProfile = () => {
  
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedImageUri, setSelectedImageUri] = useState('');
+  const {t}=useTranslation();
 
   const handleImagePress = () => {
     setSelectedImageUri(dataFromRedux?.getLoginUserProfile?.image);
@@ -142,43 +144,43 @@ const MyProfile = () => {
           </CommonText>
         </View>
         <View style={[styles.data_view, {marginTop: 10}]}>
-          <CommonText style={styles.bold_txt}>Email</CommonText>
+          <CommonText style={styles.bold_txt}>{t('Email')}</CommonText>
           <CommonText style={styles.small_txt}>
             {dataFromRedux?.getLoginUserProfile?.email}
           </CommonText>
         </View>
         <View style={[styles.data_view, {marginTop: 10}]}>
-          <CommonText style={styles.bold_txt}>Phone Number</CommonText>
+          <CommonText style={styles.bold_txt}>{t('Phone Number')}</CommonText>
           <CommonText style={styles.small_txt}>
             {dataFromRedux?.getLoginUserProfile?.mobileNumber}
           </CommonText>
         </View>
         <View style={[styles.data_view, {marginTop: 10}]}>
-          <CommonText style={styles.bold_txt}>Bio</CommonText>
+          <CommonText style={styles.bold_txt}>{t('Bio')}</CommonText>
           <CommonText style={styles.small_txt}>
             {dataFromRedux?.getLoginUserProfile?.information}
           </CommonText>
         </View>
         <View style={[styles.data_view, {marginTop: 10}]}>
-          <CommonText style={styles.bold_txt}>Address</CommonText>
+          <CommonText style={styles.bold_txt}>{t('Address')}</CommonText>
           <CommonText style={styles.small_txt}>
             {dataFromRedux?.getLoginUserProfile?.address}
           </CommonText>
         </View>
         <View style={[styles.data_view, {marginTop: 10}]}>
-          <CommonText style={styles.bold_txt}>Experience</CommonText>
+          <CommonText style={styles.bold_txt}>{t('Experience')}</CommonText>
           <CommonText style={styles.small_txt}>
             {dataFromRedux?.getLoginUserProfile?.experience}
           </CommonText>
         </View>
         <View style={[styles.data_view, {marginTop: 10}]}>
-          <CommonText style={styles.bold_txt}>Education</CommonText>
+          <CommonText style={styles.bold_txt}>{t('Education')}</CommonText>
           <CommonText style={styles.small_txt}>
             {dataFromRedux?.getLoginUserProfile?.education}
           </CommonText>
         </View>
         <View style={[styles.data_view, {marginTop: 10}]}>
-          <CommonText style={styles.bold_txt}>Current Salary</CommonText>
+          <CommonText style={styles.bold_txt}>{t('Current Salary')}</CommonText>
           <CommonText style={styles.small_txt}>
             {dataFromRedux?.getLoginUserProfile?.currentSalary
               ? 'Rs ' + dataFromRedux?.getLoginUserProfile.currentSalary
@@ -186,13 +188,13 @@ const MyProfile = () => {
           </CommonText>
         </View>
         <View style={[styles.data_view, {marginTop: 10}]}>
-          <CommonText style={styles.bold_txt}>Job Type</CommonText>
+          <CommonText style={styles.bold_txt}>{t('Job Type')}</CommonText>
           <CommonText style={styles.small_txt}>
             {dataFromRedux?.getLoginUserProfile?.jobType}
           </CommonText>
         </View>
         <View style={[styles.data_view, {marginTop: 10}]}>
-          <CommonText style={styles.bold_txt}>Availability</CommonText>
+          <CommonText style={styles.bold_txt}>{t('Availability')}</CommonText>
           <CommonText style={styles.small_txt}>
             {dataFromRedux?.getLoginUserProfile?.availability}
           </CommonText>
@@ -213,7 +215,7 @@ const MyProfile = () => {
           onPress={() => {
             navigation.navigate('contactus');
           }}>
-          <CommonText>Need Help? Ask Us</CommonText>
+          <CommonText>{t('Need Help? Ask Us')}</CommonText>
         </TouchableOpacity>
       </ScrollView>
 
