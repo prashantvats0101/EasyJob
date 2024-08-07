@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {
   Image,
   SafeAreaView,
@@ -33,7 +34,7 @@ import {Show_Toast} from '../../../utils/helper';
 import i18n from '../../../language/i18n';
 import { useTranslation } from 'react-i18next';
 
-const PersonalInfo = () => {
+const PersonalInfo = () => {  
   const navigation = useNavigation();
   const dispatch = useDispatch();
   const [imagedata, setImagedata] = useState<Image | null>(null);

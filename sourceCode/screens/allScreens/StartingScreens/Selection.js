@@ -88,8 +88,10 @@ image: {
 },
 textcontainer: {
   alignItems: 'center',
+  paddingTop: 10,
 },
 text: {
   fontSize: 25,
+  fontWeight:'bold',
 },
 });

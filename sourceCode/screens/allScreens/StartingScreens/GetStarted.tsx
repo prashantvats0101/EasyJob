@@ -29,7 +29,8 @@ const GetStarted = () => {
                     btnTextStyle={{ fontSize: 14, }}
                     name={t('GET STARTED')}
                     button={{ marginTop: 40, width: '70%', }}
-                    pressButton={() => { navigation.replace('Login') }}
+                    pressButton={() => { navigation.replace('Login')
+                    }}
                 />
             </ImageBackground>
         </SafeAreaView>
